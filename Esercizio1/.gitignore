@@ -1,0 +1,8 @@
+#Output files
+*.o
+
+#Bin folder files
+bin/*
+
+#Csv files
+*.csv

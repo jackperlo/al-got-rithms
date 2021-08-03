@@ -1,0 +1,11 @@
+#Csv files
+*.csv
+/src/*.csv
+
+#build directory
+/build/* 
+
+#build directory
+/classes/*
+
+
