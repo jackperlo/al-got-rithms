@@ -1,7 +1,8 @@
 #  What is al(l)-got-rithms?
 This repo contains different university projects made by me, Alessio Mana and Fabrizio Sanino for our Algorithm and Data Structure Exam done in Turin in June 2021.</br>
 <ul>
- <li><i>Merge-BinaryInsertion Sort</i>, written in C is about the Algorithms Complexity</li>
+ <li><i>Merge-BinaryInsertion Sort</i>, written in C is about <i>Algorithms Complexity</i>, <i>Sorting Algorithms</i> and <i>Generic Programming</i></li>
+ <li><i>Edit Distance Algorithm</i>, written in C is about <i>Algorithms Complexity</i>, <i>Recursion</i> and <i>Data Structure (Hash Table)</i></li>
 </ul>
 
 ## Merge-BinaryInsertion Sort
@@ -12,18 +13,21 @@ This repo contains different university projects made by me, Alessio Mana and Fa
      - field1: (string) containing words extracted from Divina Commedia (we assumed the values don't contain commas or blanks);<br/>
      - field2: (int);<br/>
      - field3: (floating point);<br/>
-    Our goal was to **_sort by each field (increasingly or not) faster than we could, COMBINING Merge Sort and Binary Insertion Sort_**.
+    Our goal was to **_sort by each field (increasingly or not) faster than we could, COMBINING Merge Sort and Binary Insertion Sort_**.<br/>
+    We developed **_Generic Code_** so that our library(contained in ```merge_binary_insertion_sort.c```) manages the sorting of all types (such as field1, filed2 and field3).
 
    #### How to do that?
-   We used a constant (we called it **_K_**) which manages our program to switch between Merge Sort, with complexity ```O(n log n)```, and Binary Insertion Sort (basically an Insertion Sort were the split is done by a common binary split) with complexity ```O(n^2)```.
-   <br/>The goal was to find the best _K value_ which permits the faster sorting time. It turned out to be **_67_**. <br/>
-   So, the algorithm works like this: while the length of the array to sort is greather than 67 uses merge sort, binary insertion sort otherwise. 
-     <br/>**THE GRAPHIC WHICH FOLLOW IS AN EMPIRICAL RESULT**, it could depends on the machine, or other stuffs; we combined the time results of sorting (each one alone) integers with binary sort and merge sort, and floats with binary sort and merge sort.
+   We used a constant (we called it **_K_**) which manages our program to switch between Merge Sort, with complexity ```O(n log n)```, and Binary Insertion Sort (basically an Insertion Sort were the array split is done by a binary split) with complexity ```O(n^2)```.
+   <br/>The goal was to find the best _K value_ which permits the faster sorting time. <br/>
+   The idea behind is that, potentially, Insertion Sort could be faster than Merge Sort while working with really small size arrays.
+   It turned out to be **_67_**. <br/>
+   So, the algorithm works like this: while the length of the array to sort is bigger than 67 uses Merge Sort, Binary Insertion Sort otherwise. 
+     <br/>**THE GRAPHIC WHICH FOLLOW IS AN EMPIRICAL RESULT** (obtained by bench marking arrays long 500 elements), it could depends on the machine, or other stuffs; we combined the sorting time results (done one by one): integers with Binary Insertion Sort and Merge Sort, and floats with Binary Insertion Sort and Merge Sort.
      ![Example Image](https://drive.google.com/uc?export=view&id=10gVZdCfUbVYHKl08gdilEIbAChcBU0Ua)
       
    ### What you need to execute this program is:
    - ***GCC*** compiler <br/>
-    ``` sudo apt install gcc ```  <br> or <br> ``` sudo apt install build-essential``` 
+    ``` sudo apt install gcc ```
    - ***Make*** util <br/>
     ``` sudo apt install make ```
    - ***Unity*** framework for unit testing **(:warning: Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams)**, see: https://github.com/ThrowTheSwitch/Unity.git<br/>
@@ -33,14 +37,22 @@ This repo contains different university projects made by me, Alessio Mana and Fa
      You just have to know two simple commands to use it. Once you have opened a shell in the ```root``` folder, write: <br/>
      - ``` make all``` to compile the application.<br/>
      - ``` make tests``` to run the 49 unit tests using *Unity Framework*<br/>
-     - ``` make clean``` to clean the root folder by the obj files and the executable in the subdirectories<br/>
-     - ``` make src=$file.csv$ reverse=0 run ``` to run che application. ```src``` is the file name stored in the *src folder* in which all the records to be sorted are contained; ```reverse=0``` sort by ascending order, 1 otherwise.<br/>
+     - ``` make clean``` to clean the root folder by the obj files and the executables in the subdirectories<br/>
+     - ``` make src=file.csv reverse=0 run ``` to run che application. ```src``` is the file to be sorted name, stored in the *src* folder; ```reverse=0``` sort by ascending order, 1 otherwise.<br/>
      - ``` CTRL-c``` if you want to force the termination of the program.
 
    :warning: We can't publish the file with 20mln records to be sorted due to copyright reasons. Btw you can try this program with a simple .csv file saved in the **```src```** folder were each record is organized like follow:<br/>
    ```1,hello,2735414,68601.754091```<br/>
    
    Once exectued, the sorted files are printed and saved in the **```src```** folder.
+
+## Edit Distance Algorithm
+   ### The idea Behind!
+   What if we write something wrong on our smartph0n3? The automatic corrector does the work for us.<br/>
+   Keeping this in mind we developed this algorithm.<br/>
+   Once got the file containing the sentence to correct and a Dictionary, we check (word by word) whether it's contained in the dictionary (which means that's correct) or not. If not, we use the Edit Distance Algorithm to correct the word.<br/>
+   We calculate the lowest distance between the wrong word and every dictionary's word, that will be the replacement (it may not make sense, doesn't matter).<br/>
+   The operations allowed are Insertion and Deletion of a char to/from the wrong word.
 
 ## Must know
 The game use some parameteres:
