@@ -1,38 +1,46 @@
 #  What is al(l)-got-rithms?
-This repo contains an university project made by me, Alessio Mana and Fabrizio Sanino for our Algorithm and Data Structure Exam done in Turin in June 2021.</br>
-Both *Merge-BinaryInsertion Sort* and the second exercises are written in C *(standard 89)* and developed for Unix-like systems, while the third and fourth are written in Java.
-
-
+This repo contains different university projects made by me, Alessio Mana and Fabrizio Sanino for our Algorithm and Data Structure Exam done in Turin in June 2021.</br>
+<ul>
+ <li><i>Merge-BinaryInsertion Sort</i>, written in C is about the Algorithms Complexity</li>
+</ul>
 
 ## Merge-BinaryInsertion Sort
-What you need to execute this program is:
- - ***GCC*** compiler <br/>
-    ``` sudo apt install gcc ```  <br> or <br> ``` sudo apt install build-essential``` 
- - ***Make*** util <br/>
-    ``` sudo apt install make ```
- - ***Unity*** util (for unit testing) <br/>
- 
-    ### The idea Behind!
-    In this program we tried to combine two really important algorithms: **Merge Sort** and **Binary Insertion Sort**. 
-    We were given of a file (.csv) containing 20mln records, with 3 different fields inside each record:
-      - id    : (int) unique identifier;
-      - field1: (string) containing words extracted from Divina Commedia (we assumed the values don't contain commmas or blanks);
-      - field2: (int);
-      - field3: (floating point);<br/>
-     Our goal was to **_sort each field (increasingly or not) faster than we could COMBINING Merge Sort and Binary Insertion Sort_**.
-     
-      #### How to do that?
-      We used a parameter (we called it **_K_**) which manages our program to switch between Merge Sort, with complexity ```O(n log n)```, and Binary Insertion Sort (basically an Insertion Sort were the split is done by a common binary split) with complexity ```O(n^2)```. The goal was to find the best _K value_ which permits the faster sorting time. It turned out to be **_67_**. So the algorithm works like this: while the length of the array to sort is greather than 67 uses merge sort, binary insertion sort otherwise. 
-      <br/>**THE GRAPHIC WHICH FOLLOW IS AN EMPIRICAL RESULT**, it could depends on the machine, or other stuffs; we combined the time results of sorting (each one alone) integers with binary sort and merge sort, and floats with binary sort and merge sort.
-      ![Example Image](https://drive.google.com/uc?export=view&id=10gVZdCfUbVYHKl08gdilEIbAChcBU0Ua)
+   ### The idea Behind!
+   In this program we tried to combine two really important algorithms: **Merge Sort** and **Binary Insertion Sort**.<br/>
+   We were given of a file (.csv) containing 20mln records, with 3 different fields inside each record:<br/>
+     - id    : (int) unique identifier;<br/>
+     - field1: (string) containing words extracted from Divina Commedia (we assumed the values don't contain commas or blanks);<br/>
+     - field2: (int);<br/>
+     - field3: (floating point);<br/>
+    Our goal was to **_sort by each field (increasingly or not) faster than we could, COMBINING Merge Sort and Binary Insertion Sort_**.
+
+   #### How to do that?
+   We used a constant (we called it **_K_**) which manages our program to switch between Merge Sort, with complexity ```O(n log n)```, and Binary Insertion Sort (basically an Insertion Sort were the split is done by a common binary split) with complexity ```O(n^2)```.
+   <br/>The goal was to find the best _K value_ which permits the faster sorting time. It turned out to be **_67_**. <br/>
+   So, the algorithm works like this: while the length of the array to sort is greather than 67 uses merge sort, binary insertion sort otherwise. 
+     <br/>**THE GRAPHIC WHICH FOLLOW IS AN EMPIRICAL RESULT**, it could depends on the machine, or other stuffs; we combined the time results of sorting (each one alone) integers with binary sort and merge sort, and floats with binary sort and merge sort.
+     ![Example Image](https://drive.google.com/uc?export=view&id=10gVZdCfUbVYHKl08gdilEIbAChcBU0Ua)
       
+   ### What you need to execute this program is:
+   - ***GCC*** compiler <br/>
+    ``` sudo apt install gcc ```  <br> or <br> ``` sudo apt install build-essential``` 
+   - ***Make*** util <br/>
+    ``` sudo apt install make ```
+   - ***Unity*** framework for unit testing **(:warning: Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams)**, see: https://github.com/ThrowTheSwitch/Unity.git<br/>
    
-      #### How do I run this program?
-      There is a ***Makefile*** which automatically compiles and runs the project:
-        - You just have to know two simple commands to use it. Once you have opened a shell in the ```src``` folder, write: <br/>
-        - ``` make all``` to compile the application.<br/>
-        - ``` make run``` to run che application.<br/>
-        - ``` CTRL-c``` if you want to force the termination of the program.
+   ### How do I run this program?
+   There is a ***Makefile*** which automatically compiles and runs the project and tests:<br/>
+     You just have to know two simple commands to use it. Once you have opened a shell in the ```root``` folder, write: <br/>
+     - ``` make all``` to compile the application.<br/>
+     - ``` make tests``` to run the 49 unit tests using *Unity Framework*<br/>
+     - ``` make clean``` to clean the root folder by the obj files and the executable in the subdirectories<br/>
+     - ``` make src=$file.csv$ reverse=0 run ``` to run che application. ```src``` is the file name stored in the *src folder* in which all the records to be sorted are contained; ```reverse=0``` sort by ascending order, 1 otherwise.<br/>
+     - ``` CTRL-c``` if you want to force the termination of the program.
+
+   :warning: We can't publish the file with 20mln records to be sorted due to copyright reasons. Btw you can try this program with a simple .csv file saved in the **```src```** folder were each record is organized like follow:<br/>
+   ```1,hello,2735414,68601.754091```<br/>
+   
+   Once exectued, the sorted files are printed and saved in the **```src```** folder.
 
 ## Must know
 The game use some parameteres:
