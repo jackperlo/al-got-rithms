@@ -50,9 +50,45 @@ This repo contains different university projects made by me, Alessio Mana and Fa
    ### The idea Behind!
    What if we write something wrong on our smartph0n3? The automatic corrector does the work for us.<br/>
    Keeping this in mind we developed this algorithm.<br/>
-   Once got the file containing the sentence to correct and a Dictionary, we check (word by word) whether it's contained in the dictionary (which means that's correct) or not. If not, we use the Edit Distance Algorithm to correct the word.<br/>
-   We calculate the lowest distance between the wrong word and every dictionary's word, that will be the replacement (it may not make sense, doesn't matter).<br/>
-   The operations allowed are Insertion and Deletion of a char to/from the wrong word.
+   Once got the file containing the text to correct and a Dictionary, we check (word by word) whether it's contained in the dictionary (which means that's correct) or not. If not, we use the Edit Distance Algorithm to correct the word.<br/>
+   The goal for this project was to compare a recursive version and a Dynamic Programming version of the same application. <br/>
+   
+   ### How does it work?
+   We calculate the distance between the wrong word and every dictionary's word; the word with the shortest edit-distance will be the replacement of the wrong one (it may not make sense, doesn't matter).<br/>
+   The operations allowed are Insertion and Deletion of a char to/from the wrong word. An example will follow:<br/>
+   _"Home" e "Hoome" have edit-distance equals to 1 (1 deletion)_<br/>
+   We wrote two versions of the algorithm, the first is a **Recursive One**, the second works on _**Dynamic Programming**_.
+   
+   #### Memoization Version (Dynamic Programming)
+   We worked with an _Open Indexing - Two Layers Hashing Function, Hash Table_ which mainteined couple ```<key, value>```. <br/>
+   - _Key_ is the concatenation between the two strings taken in exam. <br/>
+   - _Value_ rapresents the edit-distance between the two strings calculated by the recursive version. ```example: <HomeHoome, 1>``` <br/> 
+   
+   This method permits us to obtain a more efficient application version. In fact, once calculated an edit-distance between two strings, the result is stored in the Hash Table. Its access is done in ```O(1)``` which is far more efficient than calculate again the edit-distance.<br/>
+   At last we added another Hash Table containing the whole dictionary so that if a word is correct, the result is detected in an unique access to this Hash Table. ```example: <HomeHome, 0>```.<br/>
+   
+   ### What you need to execute this program is:
+   - ***GCC*** compiler <br/>
+    ``` sudo apt install gcc ```
+   - ***Make*** util <br/>
+    ``` sudo apt install make ```
+   - ***Unity*** framework for unit testing **(:warning: Copyright (c) 2007-14 Mike Karlesky, Mark VanderVoord, Greg Williams)**, see: https://github.com/ThrowTheSwitch/Unity.git<br/>
+   
+   ### How do I run this program?
+   There is a ***Makefile*** which automatically compiles and runs the project and tests:<br/>
+     You just have to know two simple commands to use it. Once you have opened a shell in the ```root``` folder, write: <br/>
+     - ``` make all``` to compile the application.<br/>
+     - ``` make tests``` to run the unit tests using *Unity Framework*<br/>
+     - ``` make clean``` to clean the root folder by the obj files and the executables in the subdirectories<br/>
+     - ``` make cor=correctme.txt dic=dictionary.txt run ``` to run che application. ```cor``` is the file which you want to be corrected, ```dic``` is the file which rapresents your dictionary, both stored in the *bin* folder. <br/>
+     - ``` CTRL-c``` if you want to force the termination of the program.
+
+   :warning: We can't publish the dictionary file due to copyright reasons. Btw you can try this program with your own dictionary: a simple .txt file saved in the **```bin```** folder (one word per row). <br/>
+   
+ Once exectued, the corrected text is printed and saved in the _Corrected_file.txt_ file contained in the **```bin```** folder.
+   
+   
+   
 
 ## Must know
 The game use some parameteres:
