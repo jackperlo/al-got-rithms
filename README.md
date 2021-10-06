@@ -3,6 +3,8 @@ This repo contains different university projects made by me, Alessio Mana and Fa
 <ul>
  <li><i>Merge-BinaryInsertion Sort</i>, written in C is about <i>Algorithms Complexity</i>, <i>Sorting Algorithms</i> and <i>Generic Programming</i></li>
  <li><i>Edit Distance Algorithm</i>, written in C is about <i>Algorithms Complexity</i>, <i>Recursion</i> and <i>Data Structure (Hash Table)</i></li>
+ <li><i>Union-Find-Set Structure</i>, written in Java is about <i>Data Structure</i></li>
+ <li><i>Kruskal Algorithm</i>, written in Java is about <i>Algorithms Complexity</i>, <i>Kruskal Algorithm</i> and <i>Data Structure (Graph)</i></li>
 </ul>
 
 ## Merge-BinaryInsertion Sort
