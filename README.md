@@ -87,16 +87,16 @@ This repo contains different university projects made by me, Alessio Mana and Fa
    
  Once exectued, the corrected text is printed and saved in the _Corrected_file.txt_ file contained in the **```bin```** folder.
    
+ 
+## Union-Find-Set Data Structure
+   ### The idea Behind!
+   We developed a Generic-Type Java Library containing the Union-Find-Set structure.<br/>
+   Union-Find-Set, aka Disjoint-set, is a data structures which plays a key role in Kruskal's algorithm for finding the minimum spanning tree of a graph.<br/> 
+   To maintain an efficient implementation the tree height is controlled using _Union By Rank_ and _Path Compression_ heuristics.<br/>
+   We developed Unit Tests too, thanks to:<br/>
+   - Hamcrest 1.3, **(:warning: Copyright (c) 2000-2015 www.hamcrest.org**, see:  ```https://github.com/hamcrest/JavaHamcrest.git```) <br/>
+   - J-Unit 4.12, **(:warning: Copyright (c)**, see:  ```https://github.com/junit-team/junit4.git```) <br/>
    
-   
-
-## Must know
-The game use some parameteres:
-- *Execution Parameters*: these are specified in the ***Settings*** file and will affect the result of the game. <br/>
-  **If you modify them you don't have to recompile the application.** (Just write "make run" in the shell).
-- *Compilation Parameters*: these are specified in the ***Common.h*** file (row: 26, 27) and affect the size of the map (height and width). <br/>
-  **If you modify them you have to recompile the application.** (first you write "make all" and then, one compiled, "make run").
-
 
 ## For the most curious
 This project was our first experience in C concurrent programming. It allowed us to learn the mechanisms behind this kind of programming and share some good time togheter. We take advantage of all those system calls which are essential in this kind of application. We also made experience on all the IPC such as Semaphores, Shared Memory and Message Queues. We enjoyed it a lot!
