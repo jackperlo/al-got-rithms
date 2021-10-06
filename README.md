@@ -94,8 +94,8 @@ This repo contains different university projects made by me, Alessio Mana and Fa
    Union-Find-Set, aka Disjoint-set, is a data structures which plays a key role in Kruskal's algorithm for finding the minimum spanning tree of a graph.<br/> 
    To maintain an efficient implementation the tree height is controlled using _Union By Rank_ and _Path Compression_ heuristics.<br/>
    We developed Unit Tests too, thanks to:<br/>
-   - Hamcrest 1.3, **(:warning: Copyright (c) 2000-2015 www.hamcrest.org**, see:  ```https://github.com/hamcrest/JavaHamcrest.git``` <br/>
-   - J-Unit 4.12, **(:warning: Copyright (c)**, see:  ```https://github.com/junit-team/junit4.git``` <br/>
+   - Hamcrest 1.3, **(:warning: Copyright (c) 2000-2015 www.hamcrest.org**, see:  ```https://github.com/hamcrest/JavaHamcrest.git```) <br/>
+   - J-Unit 4.12, **(:warning: Copyright (c)**, see:  ```https://github.com/junit-team/junit4.git```) <br/>
    
 
 ## For the most curious
