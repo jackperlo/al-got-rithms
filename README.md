@@ -98,15 +98,39 @@ This repo contains different university projects made by me, Alessio Mana and Fa
    We developed Unit Tests too, thanks to:<br/>
    - Hamcrest 1.3, **(:warning: Copyright (c) 2000-2015 www.hamcrest.org**, see:  ```https://github.com/hamcrest/JavaHamcrest.git```) <br/>
    - J-Unit 4.12, **(:warning: Copyright (c)**, see:  ```https://github.com/junit-team/junit4.git```) <br/>
-   
 
-## For the most curious
-This project was our first experience in C concurrent programming. It allowed us to learn the mechanisms behind this kind of programming and share some good time togheter. We take advantage of all those system calls which are essential in this kind of application. We also made experience on all the IPC such as Semaphores, Shared Memory and Message Queues. We enjoyed it a lot!
-For sure something could be done in a better way (such as the algorithm which calculates the path a taxi have to follow to reach the destination/source) but we focused more over the "concurrent side" of the project.<br/>
-For more examples, please refer to the [Documentation](https://dr
-ive.google.com/file/d/1nuqLbpuRCTUlv6wC8aB1Gj7PbQfNN3VL/view?usp=sharing).<br/>
-Hope you enjoy this,<br/> 
-Jack & Ale
+  ### How does it work?
+  This Generic class has three interesting methods:
+  - ```UnionFindSet<T> findSet()```: it returns the collections's representative on which is called.<br/>
+  - ```void link(UnionFindSet<T> x, UnionFindSet<T> y)```: the lower rank representative element will be linked to the higher rank representative element. This solution is adopted in order to allows the new collection's rank not to grow (or in the worst case: when the two linked collections have the same rank, to grow the less as possible).<br/>
+  - ```void union(UnionFindSet<T> y)```: it merges two collections.
+
+  ### What you need to execute this program is:
+   - ***JRE*** <br/>
+   - ***ANT Java*** <br/>
+   
+   ### How do I run this program?
+   There is a ***Ant file*** which automatically compiles the project and tests:<br/>
+   You just have to know few simple commands to use it. Follow ***README.txt*** instructions.<br/>
+   
+## Kruskal Algorithm
+   ### The idea Behind!
+   We developed a Kruskal implementation. <br/>
+   - ***Graph*** package: it implements a _Spread Graph_ using an HashMap which simulates the _Adjacent List_ approach: ```HashMap<FromNode, Pair<ToNode, Weight>>```. Take a look to _Report.pdf_ to see the more about methods implementation complexity.<br/>
+   - ***unionFindSet*** package: already discussed.<br/>
+   - ***kruskal*** package: it implements the ***___MST___*** (Minimum Spanning Tree) of a graph passed as parameter.<br/>
+   - _ItalyGraph.java_: read a _.csv_ passed as parameter which contains the distances between italian cities. (Couldn't load it due to Copyright reasons)<br/>
+   We developed Unit Tests too, thanks to:<br/>
+   - Hamcrest 1.3, **(:warning: Copyright (c) 2000-2015 www.hamcrest.org**, see:  ```https://github.com/hamcrest/JavaHamcrest.git```) <br/>
+   - J-Unit 4.12, **(:warning: Copyright (c)**, see:  ```https://github.com/junit-team/junit4.git```) <br/>
+
+  ### What you need to execute this program is:
+   - ***JRE*** <br/>
+   - ***ANT Java*** <br/>
+   
+   ### How do I run this program?
+   There is a ***Ant file*** which automatically compiles the project and tests:<br/>
+   You just have to know few simple commands to use it. Follow ***README.txt*** instructions.<br/>
 
 ## Contact
 Giacomo Perlo: [Linkedin](https://www.linkedin.com/in/giacomo-perlo/), <perlogiacomo@gmail.com><br/>
