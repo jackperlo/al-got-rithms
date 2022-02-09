@@ -1,19 +1,19 @@
-***COMPILAZIONE***
+***COMPILATION***
 
----PER COMPILARE ESEGUENDO IN AUTOMATICO LA RIORGANIZZAZIONE DELLE CARTELLE, LA LORO PULIZIA E LA COMPILAZIONE DELLE CLASSI E GLI UNIT TEST---
-    1) posizionarsi in .../Esercizio4
+---To compile and automatically do folder reorganization and cleaning---
+    1) go to .../Kruskal-Algorithm
     2) ant
 
----PER CANCELLARE I FILE .class E L'ARCHIVIO .jar---
-    1) posizionarsi in .../Esercizio4
+---To delete .class files and .jar archive---
+    1) go to .../Kruskal-Algorithm
     2) ant clean
 
----PER COMPILARE LE CLASSI, IL PACKAGE e GLI UNIT TEST---
-    1) posizionarsi in .../Esercizio4
+---To compile classes, package and unit tests---
+    1) posizionarsi in .../Kruskal-Algorithm
     2) ant junit
 
-***ESECUZIONE***
+***EXECUTION***
 
----PER ESEGUIRE L'ESERCIZIO4---
-    1) posizionarsi in .../Esercizio4
+---To execute Kruskal Algorithm---
+    1) go to .../Kruskal-Algorithm
     2) java -jar Build/ItalianGraph.jar src/italian_dist_graph.csv
