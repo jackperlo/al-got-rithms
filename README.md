@@ -134,5 +134,9 @@ This repo contains different university projects made by me, Alessio Mana and Fa
 
 ## Contact
 Giacomo Perlo: [Linkedin](https://www.linkedin.com/in/giacomo-perlo/), <perlogiacomo@gmail.com><br/>
-Alessio Mana: [Linkedin](https://www.linkedin.com/in/alessio-mana-051112175/), <alessioma20@gmail.com><br/> 
+Alessio Mana: [Linkedin](https://www.linkedin.com/in/alessio-mana-051112175/), <alessioma20@gmail.com><br/>
+Fabrizio Sanino: [Linkedin](linkedin.com/in/fabrizio-sanino-334307143), <fabrizio.sanino@studenti.polito.it><br/>
 If you need help or want to know something more about all of this, we are ready and excited to help you!
+
+## Licence
+[Licence](LICENCE)
